@@ -6,8 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="logging-lib" />
+        <module name="logging-lib-deployment" />
+        <module name="logging-lib-runtime" />
+        <module name="core" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="logging-lib-core" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="core" options="-parameters" />
+      <module name="logging-lib" options="-parameters" />
+      <module name="logging-lib-core" options="-parameters" />
+      <module name="logging-lib-deployment" options="-parameters" />
+      <module name="logging-lib-runtime" options="-parameters" />
+    </option>
   </component>
 </project>
